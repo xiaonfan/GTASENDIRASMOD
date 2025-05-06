@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTA San Andreas Mods - The Ultimate Guide</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            padding: 30px 0;
+            text-align: center;
+            border-bottom: 5px solid #f39c12;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            opacity: 0.2;
+            z-index: 0;
+        }
+        
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            color: #f39c12;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 1;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: #1e1e1e;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 20px;
+        }
+        
+        nav ul li a {
+            color: #f39c12;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        
+        nav ul li a:hover {
+            color: #fff;
+            background-color: #f39c12;
+        }
+        
+        /* Main Content */
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        article {
+            background-color: #1e1e1e;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        article h2 {
+            color: #f39c12;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            border-bottom: 2px solid #f39c12;
+            padding-bottom: 10px;
+        }
+        
+        article h3 {
+            color: #f39c12;
+            margin: 25px 0 15px;
+            font-size: 1.5rem;
+        }
+        
+        article p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        article ul, article ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+        
+        article li {
+            margin-bottom: 10px;
+        }
+        
+        /* Sidebar */
+        aside {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            height: fit-content;
+        }
+        
+        aside h3 {
+            color: #f39c12;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #f39c12;
+            padding-bottom: 10px;
+        }
+        
+        .mod-card {
+            background-color: #2c2c2c;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+        
+        .mod-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .mod-card h4 {
+            color: #f39c12;
+            margin-bottom: 10px;
+        }
+        
+        .mod-card img {
+            width: 100%;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        
+        /* Download Section */
+        .download-section {
+            background-color: #1e1e1e;
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .download-section h2 {
+            color: #f39c12;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            background-color: #f39c12;
+            color: #121212;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s;
+            margin-top: 20px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .download-btn:hover {
+            background-color: #e67e22;
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            height: 200px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 10px;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 50px;
+            border-top: 1px solid #333;
+        }
+        
+        footer p {
+            margin-bottom: 10px;
+        }
+        
+        .social-links {
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            color: #f39c12;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: #fff;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            header h1 {
+                font-size: 2.5rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 5px 0;
+            }
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            overflow: auto;
+        }
+        
+        .modal-content {
+            background-color: #1e1e1e;
+            margin: 5% auto;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 800px;
+            position: relative;
+            animation: modalopen 0.5s;
+        }
+        
+        @keyframes modalopen {
+            from {opacity: 0; transform: translateY(-50px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            color: #f39c12;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .close-btn:hover {
+            color: #fff;
+        }
+        
+        /* Tabs */
+        .tabs {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #333;
+        }
+        
+        .tab-btn {
+            padding: 10px 20px;
+            background-color: transparent;
+            border: none;
+            color: #e0e0e0;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .tab-btn.active {
+            color: #f39c12;
+            border-bottom: 3px solid #f39c12;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Grand Theft Auto: San Andreas Mods</h1>
+            <p>The ultimate guide to transforming your GTA: San Andreas experience with the best mods available</p>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#graphics-mods">Graphics Mods</a></li>
+                <li><a href="#gameplay-mods">Gameplay Mods</a></li>
+                <li><a href="#vehicle-mods">Vehicle Mods</a></li>
+                <li><a href="#download">Download</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="main-content">
+            <article>
+                <section id="introduction">
+                    <h2>Introduction to GTA San Andreas Modding</h2>
+                    <p>Grand Theft Auto: San Andreas, released in 2004 by Rockstar Games, remains one of the most modded games in history. The game's open-world design, combined with its accessible file structure, has made it a favorite among modders for nearly two decades. This guide will explore the vast world of GTA San Andreas mods, from visual enhancements to complete gameplay overhauls.</p>
+                    
+                    <img src="https://preview.redd.it/k9zsc7ahtd691.jpg?width=1080&crop=smart&auto=webp&s=018469ba4bd290070662415fc77e018d05cf11b8" alt="GTA San Andreas Modded Screenshot" style="width: 100%; border-radius: 8px; margin: 20px 0;">
+                    
+                    <h3>Why Mod GTA San Andreas?</h3>
+                    <p>Modding GTA San Andreas offers numerous benefits:</p>
+                    <ul>
+                        <li><strong>Enhanced Graphics:</strong> Modernize the game's visuals with high-resolution textures, improved lighting, and realistic shadows</li>
+                        <li><strong>Extended Gameplay:</strong> Add new missions, characters, and features not available in the original game</li>
+                        <li><strong>Improved Mechanics:</strong> Refine driving, shooting, and other gameplay elements</li>
+                        <li><strong>Custom Content:</strong> Add new vehicles, weapons, and buildings to the game world</li>
+                        <li><strong>Bug Fixes:</strong> Community patches can fix longstanding issues with the original game</li>
+                    </ul>
+                    
+                    <h3>Getting Started with Modding</h3>
+                    <p>Before you begin modding GTA San Andreas, you'll need:</p>
+                    <ol>
+                        <li>A legal copy of GTA San Andreas (version 1.0 is recommended for modding)</li>
+                        <li>Modding tools like IMG Tool, CLEO, or Mod Loader</li>
+                        <li>Backup of your original game files</li>
+                        <li>Patience and willingness to troubleshoot</li>
+                    </ol>
+                </section>
+                
+                <section id="graphics-mods">
+                    <h2>Graphics Enhancement Mods</h2>
+                    <p>Transform San Andreas from a 2004 title to a modern-looking game with these graphical mods:</p>
+                    
+                    <h3>ENB Series</h3>
+                    <p>The ENB Series mod brings advanced graphical effects to San Andreas, including:</p>
+                    <ul>
+                        <li>Realistic lighting and shadows</li>
+                        <li>Depth of field effects</li>
+                        <li>Improved reflections</li>
+                        <li>Motion blur</li>
+                        <li>Color correction</li>
+                    </ul>
+                    <img src="https://www.gtainside.com/downloads/picr/2023-05/1685556076_g1hX5v07SkE.jpg" alt="ENB Series Mod" style="width: 100%; border-radius: 8px; margin: 15px 0;">
+                    
+                    <h3>Project 2DFX</h3>
+                    <p>This mod extends the game's draw distance and improves various visual elements:</p>
+                    <ul>
+                        <li>Increased visible distance for objects and buildings</li>
+                        <li>Improved corona effects for lights</li>
+                        <li>Better particle effects</li>
+                        <li>Enhanced water reflections</li>
+                    </ul>
+                    
+                    <h3>SkyGfx</h3>
+                    <p>SkyGfx restores and enhances the original PlayStation 2 graphics features that were missing from the PC version:</p>
+                    <ul>
+                        <li>PS2-style color filtering</li>
+                        <li>Improved vehicle reflections</li>
+                        <li>Better rain effects</li>
+                        <li>Restored visual effects</li>
+                    </ul>
+                </section>
+                
+                <section id="gameplay-mods">
+                    <h2>Gameplay Modification Mods</h2>
+                    <p>These mods change or enhance how the game plays:</p>
+                    
+                    <h3>GTA Underground</h3>
+                    <p>A massive mod that combines maps from GTA III, Vice City, and Liberty City Stories into San Andreas:</p>
+                    <ul>
+                        <li>Seamless travel between multiple cities</li>
+                        <li>New storylines and missions</li>
+                        <li>Additional vehicles and weapons</li>
+                        <li>Custom radio stations</li>
+                    </ul>
+                    <img src="https://files.libertycity.net/download/gtasa_scripts/thumbs/2016-05/amazing-screenshot-1-2_1685994946_654701.webp" alt="GTA Underground Mod" style="width: 100%; border-radius: 8px; margin: 15px 0;">
+                    
+                    <h3>SA-MP (San Andreas Multiplayer)</h3>
+                    <p>The legendary multiplayer mod that allows hundreds of players to play together:</p>
+                    <ul>
+                        <li>Massive multiplayer servers with custom modes</li>
+                        <li>Roleplaying communities</li>
+                        <li>Custom scripts and game modes</li>
+                        <li>Regular updates and active community</li>
+                    </ul>
+                    
+                    <h3>Wasted</h3>
+                    <p>A hardcore realism mod that makes the game much more challenging:</p>
+                    <ul>
+                        <li>Realistic damage system</li>
+                        <li>Improved police AI</li>
+                        <li>Weapon recoil and accuracy adjustments</li>
+                        <li>Survival elements like hunger and fatigue</li>
+                    </ul>
+                </section>
+                
+                <section id="vehicle-mods">
+                    <h2>Vehicle Modification Mods</h2>
+                    <p>Enhance or replace the game's vehicle roster with these mods:</p>
+                    
+                    <h3>Realistic Handling Mod</h3>
+                    <p>Completely overhauls how vehicles handle in the game:</p>
+                    <ul>
+                        <li>Accurate physics for different vehicle types</li>
+                        <li>Proper weight distribution</li>
+                        <li>Realistic suspension</li>
+                        <li>Improved collision detection</li>
+                    </ul>
+                    <img src="https://files.libertycity.net/download/gtasa_scripts/thumbs/2016-05/amazing-screenshot-1-2_1685994946_391385.webp" alt="Vehicle Mods" style="width: 100%; border-radius: 8px; margin: 15px 0;">
+                    
+                    <h3>Add-On Vehicle Packs</h3>
+                    <p>These mods add new vehicles to the game without replacing existing ones:</p>
+                    <ul>
+                        <li>Modern supercars and motorcycles</li>
+                        <li>Classic muscle cars</li>
+                        <li>Military vehicles</li>
+                        <li>Custom bikes and bicycles</li>
+                    </ul>
+                    
+                    <h3>Emergency Vehicle Mods</h3>
+                    <p>Enhance the game's emergency vehicles with:</p>
+                    <ul>
+                        <li>Realistic light patterns</li>
+                        <li>Functional equipment</li>
+                        <li>Improved AI for police chases</li>
+                        <li>Custom sirens and horns</li>
+                    </ul>
+                </section>
+                
+                <section id="installation">
+                    <h2>Mod Installation Guide</h2>
+                    <p>Follow these steps to safely install mods in GTA San Andreas:</p>
+                    
+                    <div class="tabs">
+                        <button class="tab-btn active" onclick="openTab(event, 'basic-install')">Basic Installation</button>
+                        <button class="tab-btn" onclick="openTab(event, 'cleo-install')">CLEO Scripts</button>
+                        <button class="tab-btn" onclick="openTab(event, 'modloader')">Mod Loader</button>
+                    </div>
+                    
+                    <div id="basic-install" class="tab-content active">
+                        <h3>Basic Mod Installation</h3>
+                        <ol>
+                            <li>Back up your GTA San Andreas installation folder</li>
+                            <li>Download the mod files (usually in .zip or .rar format)</li>
+                            <li>Extract the files using WinRAR or 7-Zip</li>
+                            <li>Read the included README file for specific instructions</li>
+                            <li>Copy the files to the appropriate folders in your GTA SA directory</li>
+                            <li>Launch the game to test the mod</li>
+                        </ol>
+                    </div>
+                    
+                    <div id="cleo-install" class="tab-content">
+                        <h3>Installing CLEO Scripts</h3>
+                        <ol>
+                            <li>Download and install CLEO library from cleo.li</li>
+                            <li>Download your desired CLEO scripts (.cs files)</li>
+                            <li>Place the .cs files in the CLEO folder in your GTA SA directory</li>
+                            <li>Some scripts may require additional files - read the documentation</li>
+                            <li>Launch the game - most scripts activate automatically</li>
+                        </ol>
+                    </div>
+                    
+                    <div id="modloader" class="tab-content">
+                        <h3>Using Mod Loader</h3>
+                        <ol>
+                            <li>Download Mod Loader from the official source</li>
+                            <li>Extract the files to your GTA SA directory</li>
+                            <li>Create a "modloader" folder in your GTA SA directory</li>
+                            <li>For each mod, create a subfolder in the modloader folder</li>
+                            <li>Place mod files in their respective subfolders</li>
+                            <li>Mod Loader will handle file conflicts and loading order</li>
+                        </ol>
+                    </div>
+                    
+                    <h3>Troubleshooting Common Issues</h3>
+                    <ul>
+                        <li><strong>Game crashes on startup:</strong> Likely a mod conflict - remove recently added mods one by one</li>
+                        <li><strong>Missing textures:</strong> Ensure all required files are installed in the correct locations</li>
+                        <li><strong>Mod not working:</strong> Check if you have the correct game version (1.0 is best for modding)</li>
+                        <li><strong>Performance issues:</strong> Some graphics mods are demanding - adjust settings or upgrade hardware</li>
+                    </ul>
+                </section>
+                
+                <section id="community">
+                    <h2>The GTA Modding Community</h2>
+                    <p>The GTA modding community is one of the most active and creative in gaming. Here are some key resources:</p>
+                    
+                    <h3>Popular Modding Sites</h3>
+                    <ul>
+                        <li><strong>GTAForums:</strong> The central hub for GTA modding discussion and releases</li>
+                        <li><strong>GTAInside:</strong> Massive repository of GTA mods across all games</li>
+                        <li><strong>ModDB:</strong> Hosts large mod projects and total conversions</li>
+                        <li><strong>MixMods:</strong> Brazilian modding site with many exclusive mods</li>
+                    </ul>
+                    
+                    <h3>Notable Modders</h3>
+                    <p>These individuals have made significant contributions to GTA modding:</p>
+                    <ul>
+                        <li><strong>The Hero:</strong> Creator of many essential modding tools</li>
+                        <li><strong>DK22Pac:</strong> Known for advanced scripting and modding techniques</li>
+                        <li><strong>Junior_Djjr:</strong> Creator of the SilentPatch and other essential fixes</li>
+                        <li><strong>13AG:</strong> Developer of the Wesser mods and other gameplay overhauls</li>
+                    </ul>
+                    
+                    <h3>Modding Etiquette</h3>
+                    <p>When participating in the modding community:</p>
+                    <ul>
+                        <li>Always credit original mod authors when modifying or redistributing their work</li>
+                        <li>Read mod descriptions carefully before asking questions</li>
+                        <li>Be patient when waiting for help on forums</li>
+                        <li>Don't upload mods without permission from the creators</li>
+                    </ul>
+                </section>
+            </article>
+            
+            <aside>
+                <h3>Top Rated Mods</h3>
+                
+                <div class="mod-card">
+                    <h4>SilentPatch</h4>
+                    <img src="https://images.gamebanana.com/img/ss/mods/514db25430ec0.webp" alt="SilentPatch Mod">
+                    <p>A collection of unofficial bug fixes and improvements for the PC version of GTA San Andreas.</p>
+                </div>
+                
+                <div class="mod-card">
+                    <h4>GTA SA DirectX 2.0</h4>
+                    <img src="https://images.gamebanana.com/img/ss/mods/514db29ee0a18.webp" alt="DirectX 2.0 Mod">
+                    <p>Massive graphics overhaul with new shaders, effects, and visual improvements.</p>
+                </div>
+                
+                <div class="mod-card">
+                    <h4>GTA SA: Remastered</h4>
+                    <img src="https://images.gamebanana.com/img/ss/mods/514db28756ebe.webp" alt="SA Remastered">
+                    <p>A complete visual remaster with high-resolution textures and models.</p>
+                </div>
+                
+                <div class="mod-card">
+                    <h4>GTA SA: Definitive Edition</h4>
+                    <img src="https://gtasanandreasapk.org/wp-content/uploads/2024/09/Gta-san-andreas-mod-apk-download.webp" alt="Definitive Edition">
+                    <p>Community-made "definitive edition" with modern graphics and gameplay.</p>
+                </div>
+                
+                <h3 style="margin-top: 30px;">Essential Tools</h3>
+                
+                <div class="mod-card">
+                    <h4>Mod Loader</h4>
+                    <p>Allows mod installation without replacing original game files.</p>
+                </div>
+                
+                <div class="mod-card">
+                    <h4>CLEO Library</h4>
+                    <p>Enables advanced scripting capabilities for complex mods.</p>
+                </div>
+                
+                <div class="mod-card">
+                    <h4>IMG Tool</h4>
+                    <p>For editing game archives to add or replace content.</p>
+                </div>
+            </aside>
+        </div>
+        
+        <div class="download-section">
+            <h2>Download Our Custom Mod Pack</h2>
+            <p>We've compiled the best mods into one easy-to-install package. Includes:</p>
+            <ul style="list-style: none; margin: 20px 0;">
+                <li>✔ High-resolution texture pack</li>
+                <li>✔ Enhanced weather and lighting</li>
+                <li>✔ Realistic vehicle handling</li>
+                <li>✔ Improved character models</li>
+                <li>✔ Bug fixes and performance optimizations</li>
+            </ul>
+            
+            <button class="download-btn" onclick="openDownloadModal()">Download Mod Pack</button>
+        </div>
+        
+        <div class="gallery">
+            <h2 style="grid-column: 1 / -1;">Mod Showcase Gallery</h2>
+            
+            <div class="gallery-item">
+                <img src="https://gtasanandreasapk.org/wp-content/uploads/2024/10/GTA-San-andreas-mod-apk-download-latest-version-1024x576.webp" alt="Modded Graphics">
+                <div class="gallery-caption">ENB Series with custom shaders</div>
+            </div>
+            
+            <div class="gallery-item">
+                <img src="https://i.ytimg.com/vi/Xml5EnEJYUc/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBnXw78L1qKPvCIY9VIaDUlLRm2ZQ" alt="Custom Vehicles">
+                <div class="gallery-caption">Add-on supercars with realistic physics</div>
+            </div>
+            
+            <div class="gallery-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs1jxsjbd_SGVeagSbDN2iyElCDANYLpnlAA&s" alt="Map Expansion">
+                <div class="gallery-caption">Liberty City added to San Andreas map</div>
+            </div>
+            
+            <div class="gallery-item">
+                <img src="https://rexdl.com/image/android/game/gta-san-andreas-apk.jpg" alt="Character Mods">
+                <div class="gallery-caption">HD character models and animations</div>
+            </div>
+            
+            <div class="gallery-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzNfs9E0Y47gmJQ9jrqDTWSuOpqLurnkF85Q&s" alt="Weapon Mods">
+                <div class="gallery-caption">Realistic weapon models and effects</div>
+            </div>
+            
+            <div class="gallery-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkfHvrvd40vyf76OyZc3LgxeW26B9bv39tEg&s" alt="Night Lighting">
+                <div class="gallery-caption">Enhanced night lighting and effects</div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>© 2023 GTA San Andreas Modding Guide. All rights reserved.</p>
+            <p>This site is not affiliated with Rockstar Games or Take-Two Interactive.</p>
+            <p>All game mods are property of their respective creators.</p>
+            
+            <div class="social-links">
+                <a href="#"><i class="fab fa-discord"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Download Modal -->
+    <div id="downloadModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeDownloadModal()">&times;</span>
+            <h2>Download GTA San Andreas Ultimate Mod Pack</h2>
+            <p>By downloading, you agree to:</p>
+            <ul>
+                <li>Use this mod pack only with a legally obtained copy of GTA San Andreas</li>
+                <li>Not redistribute the files without permission</li>
+                <li>Credit original mod authors when sharing screenshots/videos</li>
+            </ul>
+            
+            <h3>System Requirements</h3>
+            <ul>
+                <li>GTA San Andreas version 1.0 (not compatible with newer Steam versions)</li>
+                <li>Windows 7 or newer (64-bit recommended)</li>
+                <li>4GB RAM minimum, 8GB recommended</li>
+                <li>2GB VRAM GPU (GTX 1050 or equivalent minimum)</li>
+                <li>10GB free disk space</li>
+            </ul>
+            
+            <h3>Installation Instructions</h3>
+            <ol>
+                <li>Back up your GTA San Andreas installation</li>
+                <li>Download the mod pack</li>
+                <li>Extract the files to your GTA SA directory</li>
+                <li>Run the installer.bat file</li>
+                <li>Follow the on-screen instructions</li>
+                <li>Launch the game using the new shortcut</li>
+            </ol>
+            
+            <a href="TY.HERE.COM.OM" class="download-btn" style="display: block; text-align: center; margin: 30px auto;">Download Now (4.2GB)</a>
+            
+            <p style="text-align: center; margin-top: 20px;">Need help? Join our <a href="#" style="color: #f39c12;">Discord server</a> for support.</p>
+        </div>
+    </div>
+    
+    <script>
+        // Tab functionality
+        function openTab(evt, tabName) {
+            let tabContents = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove("active");
+            }
+            
+            let tabButtons = document.getElementsByClassName("tab-btn");
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove("active");
+            }
+            
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+        
+        // Modal functionality
+        function openDownloadModal() {
+            document.getElementById("downloadModal").style.display = "block";
+            document.body.style.overflow = "hidden";
+        }
+        
+        function closeDownloadModal() {
+            document.getElementById("downloadModal").style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+        
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            let modal = document.getElementById("downloadModal");
+            if (event.target == modal) {
+                closeDownloadModal();
+            }
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+    
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
